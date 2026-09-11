@@ -22,7 +22,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:10px 0 32px}.
 </style>
 </head>
 <body>
-<header><div class="wrap" style="padding:0"><h1>DO ZERO AO TOPO</h1><p>Sua vida. Suas escolhas. Seu futuro.</p><div class="version">MVP 0.2 • economia, carreira, dívida e perguntas aleatórias</div></div></header>
+<header><div class="wrap" style="padding:0"><h1>DO ZERO AO TOPO</h1><p>Sua vida. Suas escolhas. Seu futuro.</p><div class="version">MVP 0.2.2 • economia, carreira, dívida e eventos únicos</div></div></header>
 <main class="wrap">
 <section id="setup" class="card">
   <div class="eyebrow">Nova vida</div>
@@ -82,7 +82,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:10px 0 32px}.
   <button class="secondary" onclick="resetGame()">Recomeçar personagem</button>
 </section>
 </main>
-<footer>DO ZERO AO TOPO — MVP 0.2</footer>
+<footer>DO ZERO AO TOPO — MVP 0.2.2</footer>
 <script>
 const events=[
  {t:"Você recebeu seu primeiro salário. O que fará com parte dele?", c:[
@@ -163,15 +163,17 @@ const events=[
 ];
 
 let s={};
-const KEY='dzat_mvp02';
+const KEY='dzat_mvp022';
+const OLD_KEY='dzat_mvp02';
 const $=id=>document.getElementById(id);
 const br=v=>Number(v).toLocaleString('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0});
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 function base(prof,city){return{cash:1000,assets:0,investments:0,businesses:0,debt:0,xp:0,day:1,streak:0,profession:prof,city,age:18,income:salaryFor(prof),skill:0,risk:0,life:50,season:1,history:[],used:[],totalXp:0};}
 function salaryFor(p){p=p.toLowerCase();if(/méd|med|dent|advog|engenh|dev|program|ti|contador|médico/.test(p))return 3800;if(/enferm|professor|designer|fotóg|fotograf|eletric|técn/.test(p))return 2800;if(/mecân|motor|vendedor|chef|cozin/.test(p))return 2400;if(/empree|criador|influenc/.test(p))return 2200;return 2500;}
 function save(){localStorage.setItem(KEY,JSON.stringify(s));}
-function load(){try{const x=JSON.parse(localStorage.getItem(KEY));if(x){s=x;showGame();render();return true}}catch(e){}return false}
-function startGame(){const p=$('profession').value.trim();if(!p){alert('Escolha uma profissão para começar.');return}s=base(p,$('city').value);save();showGame();render();}
+function validUsed(arr){return Array.isArray(arr)&&arr.length===7&&arr.every(i=>Number.isInteger(i)&&i>=0&&i<events.length)&&new Set(arr).size===7;}
+function load(){try{let raw=localStorage.getItem(KEY);if(!raw)raw=localStorage.getItem(OLD_KEY);const x=raw?JSON.parse(raw):null;if(x){s=x;if(!validUsed(s.used)){prepareSeason();}save();showGame();render();return true}}catch(e){}return false}
+function startGame(){const p=$('profession').value.trim();if(!p){alert('Escolha uma profissão para começar.');return}s=base(p,$('city').value);prepareSeason();save();showGame();render();}
 function showGame(){$('setup').classList.add('hidden');$('game').classList.remove('hidden');}
 function render(){
  $('cash').textContent=br(s.cash);$('cash').classList.toggle('negative',s.cash<0);$('net').textContent=br(netWorth());$('xp').textContent=s.xp;
@@ -197,7 +199,7 @@ function choose(i){const e=currentEvent(),x=e.c[i];
  save();
  if(s.day<7){s.day++;randomizeUpcoming();setTimeout(render,650)}else{setTimeout(endSeason,650)}
 }
-function randomizeUpcoming(){/* The full pool is shuffled for the next season; current season uses 7 unique events. */}
+function randomizeUpcoming(){/* The season sequence is fixed after preparation; events cannot repeat. */}
 function prepareSeason(){const idx=[...Array(events.length).keys()];for(let i=idx.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[idx[i],idx[j]]=[idx[j],idx[i]]}s.used=idx.slice(0,7);}
 function netWorth(){return Math.round(s.cash+s.assets+s.investments+s.businesses-s.debt);}
 function profile(){let out=[];if(s.risk>=35)out.push('🚀 Agressivo');else if(s.risk>=15)out.push('📈 Oportunista');else out.push('🛡️ Conservador');if(s.life>=70)out.push('❤️ Equilibrado');else if(s.life<35)out.push('⚠️ Sob pressão');if(s.skill>=35)out.push('🧠 Qualificado');if(s.debt>0)out.push('💳 Endividado');return out}
