@@ -1,1 +1,9 @@
-{"name":"DO ZERO AO TOPO","short_name":"Zero ao Topo","start_url":"./","display":"standalone","background_color":"#f3f6fa","theme_color":"#101827","lang":"pt-BR"}
+{
+  "name": "DO ZERO AO TOPO — Alpha 1.0",
+  "short_name": "Zero ao Topo",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#eef2f6",
+  "theme_color": "#101827",
+  "lang": "pt-BR"
+}
