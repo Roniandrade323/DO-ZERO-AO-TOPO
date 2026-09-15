@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#101827"><meta name="description" content="DO ZERO AO TOPO — Alpha 1.3">
-<title>DO ZERO AO TOPO — ALPHA 1.4</title>
+<title>DO ZERO AO TOPO — ALPHA 1.5</title>
 <style>
 :root{--ink:#101827;--muted:#667085;--bg:#eef2f6;--card:#fff;--blue:#4d6fd6;--green:#4d8f68;--gold:#e0b54b;--red:#c95752;--orange:#d98935;--line:#dbe2ea;--soft:#f7f9fb}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--ink)}header{background:#101827;color:#fff;padding:42px 22px 32px}header h1{font-size:38px;line-height:1.05;margin:0 0 12px;font-weight:900}header p{margin:0;color:#cbd3df;font-size:20px}.wrap{max-width:850px;margin:auto;padding:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:22px;margin:16px 0;box-shadow:0 6px 22px #1018270a}.kicker{letter-spacing:4px;color:var(--green);font-weight:900;font-size:15px;margin-bottom:10px}.title{font-size:28px;font-weight:900;margin:0 0 10px}.sub{color:var(--muted);font-size:17px;line-height:1.45}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.stat{background:var(--soft);border:1px solid var(--line);border-radius:20px;padding:15px}.stat small{display:block;color:var(--muted);font-size:14px}.stat b{font-size:24px}.wide{grid-column:1/-1}button,select,input{font:inherit}button{width:100%;border:0;border-radius:18px;padding:16px 14px;font-weight:800;font-size:17px;background:var(--blue);color:#fff;margin-top:10px}button.secondary{background:#edf1f7;color:var(--ink)}button.danger{background:var(--red)}button.gold{background:#e2b64e;color:#1c1c1c}button:disabled{opacity:.42}input,select{width:100%;padding:16px;border:2px solid var(--line);border-radius:16px;background:#fff;margin:7px 0 14px}label{font-weight:800;display:block;margin-top:5px}.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}.chip{background:#edf1f7;border-radius:999px;padding:9px 13px;font-weight:700}.progress{height:12px;background:#e5eaf0;border-radius:99px;overflow:hidden}.progress i{display:block;height:100%;background:var(--green)}.action{border:1px solid var(--line);border-radius:20px;padding:16px;margin:11px 0;background:#fff}.action h3{margin:0 0 4px;font-size:20px}.action p{margin:0;color:var(--muted);line-height:1.35}.action button{margin-top:12px}.event{border:2px solid #f0d98b;background:#fff8dc}.event.urgent{border-color:#e7a45c;background:#fff3e4}.event.danger{border-color:#d77b75;background:#fff0ef}.choice{background:#f7f9fb;color:var(--ink);border:1px solid var(--line);text-align:left}.choice strong{display:block;font-size:17px;margin-bottom:3px}.choice .tiny{display:block}.result{margin-top:14px;padding:14px;border-radius:16px;background:#eff8f2;border:1px solid #cce5d4}.good{color:#28764a}.bad{color:#ad3e39}.warn{color:#9a6419}.tiny{font-size:14px;color:var(--muted)}.meter{height:9px;background:#e7ebef;border-radius:99px;overflow:hidden;margin-top:7px}.meter i{display:block;height:100%;background:var(--green)}.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}.log{padding:12px 0;border-bottom:1px solid var(--line);line-height:1.4}.log:last-child{border-bottom:0}.tag{display:inline-block;font-size:12px;font-weight:900;padding:5px 8px;border-radius:999px;background:#edf1f7;margin-right:6px}.heroChoice{border:2px solid #d9c36b;background:#fffdf1}.banner{padding:14px 16px;border-radius:18px;background:#eef4ff;border:1px solid #d5def6;margin-top:12px}.gameover{border:3px solid var(--red);background:#fff0ef}.locked{opacity:.55}.footer{text-align:center;color:#667085;padding:28px 0 50px}
 @media(max-width:520px){header h1{font-size:32px}.title{font-size:25px}.grid{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}}
 </style>
-<link rel="manifest" href="./manifest.json"><script>if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=13').catch(()=>{}));</script>
+<link rel="manifest" href="./manifest.json"><script>if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=14').catch(()=>{}));</script>
 </head>
-<body><header><div class="wrap"><h1>DO ZERO AO TOPO</h1><p>Sua vida. Suas escolhas. Seu futuro.</p><p style="margin-top:12px;font-size:16px">ALPHA 1.4 • vida real • carreira • escolhas • consequências</p></div></header><main class="wrap" id="app"></main>
+<body><header><div class="wrap"><h1>DO ZERO AO TOPO</h1><p>Sua vida. Suas escolhas. Seu futuro.</p><p style="margin-top:12px;font-size:16px">ALPHA 1.5 • vida real • corpo • emoções • dinheiro • consequências</p></div></header><main class="wrap" id="app"></main>
 <script>
-const KEY='dzat_alpha14';
+const KEY='dzat_alpha15';
 const money=n=>'R$ '+Math.round(n).toLocaleString('pt-BR');
 const days=['Domingo','Segunda-feira','Terça-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sábado'];
 const paths={
@@ -23,7 +23,7 @@ const paths={
  'Empreendedor':{base:1400,work:8,skill:1},
  'Profissional liberal':{base:2600,work:7,skill:2}
 };
-const S={name:'',profession:'',path:'',city:'',state:'São Paulo',country:'Brasil',age:18,month:1,day:1,cash:1000,invest:0,assets:0,debt:0,health:90,energy:85,happy:70,stress:20,knowledge:0,experience:0,career:0,relationship:50,time:12,actions:0,event:null,eventDone:false,eventCooldown:[],flags:{},logs:[],gameOver:false,created:false,careerStage:'Sem formação',education:0,jobLevel:0,jobTitle:'Sem emprego',monthlyFixed:0,monthIncome:0};
+const S={name:'',profession:'',path:'',city:'',state:'São Paulo',country:'Brasil',age:18,month:1,day:1,cash:1000,invest:0,assets:0,debt:0,health:88,energy:88,happy:76,stress:14,knowledge:0,experience:0,career:0,relationship:65,time:12,actions:0,event:null,eventDone:false,eventCooldown:[],sick:false,sickDays:0,medicine:false,flags:{},logs:[],gameOver:false,created:false,careerStage:'Sem formação',education:0,jobLevel:0,jobTitle:'Sem emprego',monthlyFixed:0,monthIncome:0};
 function clamp(){for(const k of ['health','energy','happy','stress','relationship'])S[k]=Math.max(0,Math.min(100,S[k]));S.cash=Math.max(0,S.cash);S.invest=Math.max(0,S.invest);S.assets=Math.max(0,S.assets);S.debt=Math.max(0,S.debt)}
 function net(){return S.cash+S.invest+S.assets-S.debt}
 function monthlyIncome(){
@@ -42,15 +42,20 @@ function load(){let x=localStorage.getItem(KEY);if(x){try{Object.assign(S,JSON.p
 function year(){return Math.floor((S.month-1)/12)+1}
 function ageAt(){return 18+Math.floor((S.month-1)/12)}
 function timeLabel(){let used=12-S.time;return String(7+Math.floor(used)).padStart(2,'0')+':00'}
-function start(){S.name=document.getElementById('name').value.trim()||'Jogador';S.profession=document.getElementById('profession').value.trim()||'Profissional';S.path=document.getElementById('path').value;S.city=document.getElementById('city').value.trim()||'Sua cidade';S.state=document.getElementById('state').value;S.country=document.getElementById('country').value.trim()||'Brasil';S.created=true;S.age=18;S.month=1;S.day=1;S.cash=1000;S.invest=0;S.assets=0;S.debt=0;S.flags={business:false,businessLevel:0,studiedToday:false,workedToday:false,healthToday:false,socialToday:false,moneyToday:false};S.eventCooldown=[];S.logs=[];S.gameOver=false;S.eventDone=false;S.time=12;S.careerStage='Sem formação';S.education=0;S.jobLevel=0;S.jobTitle='Sem emprego';S.monthIncome=0;addLog('Você começou uma nova vida aos 18 anos com R$ 1.000 no caixa.');pickEvent();save();render()}
-function setup(){document.getElementById('app').innerHTML=`<section class="card"><div class="kicker">NOVA VIDA</div><h2 class="title">Comece aos 18 anos</h2><p class="sub">Nesta versão você não vai apenas cumprir uma lista. Seu dia tem tempo limitado, seu mundo reage às escolhas e algumas decisões criam acontecimentos futuros.</p><label>Nome</label><input id="name" placeholder="Ex.: Roni"><label>Profissão / sonho</label><input id="profession" placeholder="Ex.: mecânico, médico, programador, contador..."><label>Caminho inicial</label><select id="path">${Object.keys(paths).map((x,i)=>`<option ${i===0?'selected':''}>${x}</option>`).join('')}</select><label>Estado</label><select id="state">${['São Paulo','Minas Gerais','Rio de Janeiro','Paraná','Santa Catarina','Goiás','Distrito Federal','Bahia','Pernambuco','Rio Grande do Sul'].map(x=>`<option>${x}</option>`).join('')}</select><label>Cidade</label><input id="city" placeholder="Ex.: Limeira"><label>País</label><input id="country" value="Brasil"><button onclick="start()">COMEÇAR MINHA VIDA</button></section><section class="card"><div class="kicker">O QUE MUDOU</div><div class="sub">⚡ <b>12 horas por dia</b> para administrar.<br>🎯 <b>1 acontecimento importante</b> por dia.<br>🧠 Conhecimento e experiência desbloqueiam oportunidades.<br>🔗 Algumas escolhas criam <b>consequências futuras</b>.<br>💳 Dívidas têm juros e podem virar uma bola de neve.<br>🏁 R$ 100.000 de dívida = GAME OVER.</div></section>`}
+function start(){S.name=document.getElementById('name').value.trim()||'Jogador';S.profession=document.getElementById('profession').value.trim()||'Profissional';S.path=document.getElementById('path').value;S.city=document.getElementById('city').value.trim()||'Sua cidade';S.state=document.getElementById('state').value;S.country=document.getElementById('country').value.trim()||'Brasil';S.created=true;S.age=18;S.month=1;S.day=1;S.cash=1000;S.invest=0;S.assets=0;S.debt=0;S.flags={business:false,businessLevel:0,healthToday:false,socialToday:false};S.eventCooldown=[];S.logs=[];S.gameOver=false;S.eventDone=false;S.time=12;S.careerStage='Sem formação';S.education=0;S.jobLevel=0;S.jobTitle='Sem emprego';S.monthIncome=0;S.health=88;S.energy=88;S.happy=72;S.stress=18;S.relationship=65;S.sick=false;S.sickDays=0;S.medicine=false;addLog('Você começou uma nova vida aos 18 anos com R$ 1.000 no caixa.');pickEvent();save();render()}
+function setup(){document.getElementById('app').innerHTML=`<section class="card"><div class="kicker">NOVA VIDA</div><h2 class="title">Comece aos 18 anos</h2><p class="sub">Nesta versão seu personagem sente o peso das escolhas. Corpo, emoções, dinheiro, carreira e relacionamentos reagem ao jeito que você vive. Algumas decisões criam consequências futuras.</p><label>Nome</label><input id="name" placeholder="Ex.: Roni"><label>Profissão / sonho</label><input id="profession" placeholder="Ex.: mecânico, médico, programador, contador..."><label>Caminho inicial</label><select id="path">${Object.keys(paths).map((x,i)=>`<option ${i===0?'selected':''}>${x}</option>`).join('')}</select><label>Estado</label><select id="state">${['São Paulo','Minas Gerais','Rio de Janeiro','Paraná','Santa Catarina','Goiás','Distrito Federal','Bahia','Pernambuco','Rio Grande do Sul'].map(x=>`<option>${x}</option>`).join('')}</select><label>Cidade</label><input id="city" placeholder="Ex.: Limeira"><label>País</label><input id="country" value="Brasil"><button onclick="start()">COMEÇAR MINHA VIDA</button></section><section class="card"><div class="kicker">O QUE MUDOU</div><div class="sub">⚡ <b>12 horas por dia</b> para administrar.<br>🎯 <b>1 acontecimento importante</b> por dia.<br>🧠 Conhecimento e experiência desbloqueiam oportunidades.<br>🔗 Algumas escolhas criam <b>consequências futuras</b>.<br>💳 Dívidas têm juros e podem virar uma bola de neve.<br>🏁 R$ 100.000 de dívida = GAME OVER.</div></section>`}
 
 function eligible(e){if(S.eventCooldown.includes(e.id))return false;if(e.req&& !e.req())return false;return true}
-function pickEvent(){if(S.eventDone){S.event=null;return}let pool=events.filter(eligible);if(!pool.length){S.event=events.find(e=>!e.req||e.req())||events[0];return}pool.sort(()=>Math.random()-.5);S.event=pool[0]}
+function pickEvent(){if(S.eventDone){S.event=null;return}if(S.sick){S.event=sickEvent;return}let pool=events.filter(eligible);if(!pool.length){S.event=events.find(e=>!e.req||e.req())||events[0];return}pool.sort(()=>Math.random()-.5);S.event=pool[0]}
 function consequenceText(delta){let out=[];if(delta.cash)out.push((delta.cash>0?'+':'')+money(delta.cash)+' caixa');if(delta.debt)out.push((delta.debt>0?'+':'-')+money(Math.abs(delta.debt))+' dívida');if(delta.knowledge)out.push('Conhecimento '+(delta.knowledge>0?'+':'')+delta.knowledge);if(delta.experience)out.push('Experiência '+(delta.experience>0?'+':'')+delta.experience);return out.join(' • ')}
 function choose(i){if(!S.event||S.eventDone||S.gameOver)return;let e=S.event,c=e.choices[i];if(!c)return;if(c.can&&!c.can()){alert(c.block||'Você ainda não pode fazer isso.');return}let before={cash:S.cash,debt:S.debt,knowledge:S.knowledge,experience:S.experience};let msg=c.do();S.eventDone=true;S.eventCooldown.unshift(e.id);S.eventCooldown=S.eventCooldown.slice(0,4);S.event={...e,result:msg};addLog(msg,c.kind==='bad'?'bad':'');clamp();if(S.debt>=100000){S.gameOver=true;addLog('GAME OVER: sua dívida atingiu R$ 100.000.','bad')}save();render()}
 
 const events=[
+const sickEvent={id:'sick',title:'🤒 Você ficou doente',req:()=>S.sick,text:()=>`Seu corpo não conseguiu acompanhar o ritmo. Você está doente e continuar ignorando isso pode custar saúde, dinheiro e trabalho.`,choices:[
+ {t:'Comprar remédio — R$ 80',s:'Gasta dinheiro, mas acelera a recuperação.',can:()=>S.cash>=80,block:'Você não tem R$ 80 disponíveis para o tratamento.',do:()=>{S.cash-=80;S.health+=22;S.energy+=15;S.stress-=8;S.sickDays=Math.max(0,S.sickDays-2);S.medicine=true;return 'Você comprou o medicamento e começou o tratamento.'}},
+ {t:'Repousar hoje',s:'Perde produtividade, mas dá tempo ao corpo.',can:()=>S.time>=4,block:'Você não tem tempo suficiente para fazer um repouso adequado.',do:()=>{S.time=0;S.energy+=30;S.health+=15;S.stress-=16;S.happy+=3;S.sickDays=Math.max(0,S.sickDays-1);return 'Você decidiu repousar. Hoje a prioridade foi recuperar o corpo.'}},
+ {t:'Trabalhar mesmo doente',s:'Mantém parte da renda, mas aumenta o risco de piora.',do:()=>{let gain=Math.max(5,Math.round(dailyIncome()*.45));S.cash+=gain;S.health-=14;S.energy-=22;S.stress+=15;S.happy-=8;S.sickDays+=1;return `Você trabalhou doente e recebeu ${money(gain)}, mas sua recuperação piorou.`},kind:'bad'}
+]};
 {id:'career_start',title:'Seu primeiro passo profissional',req:()=>S.jobLevel===0&&S.experience>=3,text:()=>`Seu sonho é ${S.profession}, mas sonho e profissão não são a mesma coisa. Você precisa construir experiência, qualificação ou começar por uma vaga de entrada.`,choices:[
  {t:'Buscar vaga de entrada',s:'Começa ganhando menos, mas cria experiência real.',do:()=>{S.jobLevel=1;S.jobTitle='Auxiliar / iniciante';S.careerStage='Entrada profissional';S.experience+=8;S.career+=4;S.flags.firstJob=true;return 'Você conseguiu uma vaga de entrada. A profissão começa a virar carreira.'}},
  {t:'Investir 4 horas em formação',s:'Avança na qualificação antes de procurar a vaga.',can:()=>S.time>=4,block:'Você precisa de 4 horas livres.',do:()=>{S.time-=4;S.education+=12;S.knowledge+=8;S.careerStage='Em formação';return 'Você decidiu se preparar antes. Sua qualificação avançou e novas vagas poderão aparecer.'}},
@@ -139,56 +144,83 @@ const events=[
 ]}
 ];
 
-function activity(fn,h,minEnergy=0){
-  if(S.gameOver)return;
-  if(S.time<h){alert(`Você precisa de ${h} horas livres.`);return}
-  if(S.energy<minEnergy){alert(`Sua energia está em ${Math.round(S.energy)}%. Você precisa de pelo menos ${minEnergy}% para fazer isso.`);return}
-  S.time-=h; fn(); S.actions++; S.experience+=1;
-  S.energy-=Math.max(3,h*3);
-  S.stress+=Math.max(0,h-2);
-  clamp(); save(); render();
+function bodyCheck(){
+  // ALPHA 1.5: corpo, dinheiro e vida pessoal influenciam o estado emocional.
+  if(S.energy<22){S.stress+=5;S.happy-=4;S.health-=1;}
+  if(S.energy<10){S.stress+=5;S.happy-=4;S.health-=2;}
+  if(S.stress>55)S.happy-=2;
+  if(S.stress>75){S.happy-=5;S.health-=1;}
+  if(S.debt>0)S.happy-=Math.min(4,Math.ceil(S.debt/2500));
+  if(S.cash<100)S.happy-=3;
+  if(S.cash<30)S.happy-=4;
+  if(S.relationship<40)S.happy-=3;
+  if(S.relationship<20)S.happy-=4;
+  if(S.sick)S.happy-=6;
+
+  // Excesso acumulado pode adoecer o personagem.
+  const overload=(S.stress>=82)+(S.energy<=12)+(S.health<=42);
+  if(!S.sick && overload>=1 && Math.random() < (overload>=2?.48:.22)){
+    S.sick=true;S.sickDays=1;S.health-=8;S.stress+=9;S.happy-=10;
+    addLog('🤒 Você ficou doente. Seu corpo finalmente cobrou o excesso acumulado.','bad');
+  }
+  clamp();
 }
-function study(){
-  if(S.flags.studiedToday){alert('Você já estudou hoje. Amanhã você poderá voltar a estudar.');return}
-  activity(()=>{S.flags.studiedToday=true;S.knowledge+=4;S.education+=3;S.happy+=1;
-    addLog('Você estudou por 2 horas. Conhecimento +4 e formação +3.')},2,25)
+function sleepRecovery(){
+  let recovery=24;
+  if(S.stress>70)recovery=15;
+  if(S.health<55)recovery=18;
+  if(S.sick)recovery=12;
+  S.energy+=recovery;
+  S.stress-=12;
+  S.health+=S.sick?2:4;
+
+  // A felicidade tem uma faixa natural: descanso ajuda, mas não apaga problemas.
+  if(S.stress<25 && S.relationship>=60 && S.debt===0)S.happy+=3;
+  else if(S.stress>70 || S.debt>0 || S.cash<100)S.happy-=2;
+  else S.happy-=1;
+
+  if(S.sick)S.sickDays++;
+  if(S.sick && S.health>=72 && S.sickDays>=2){
+    S.sick=false;S.sickDays=0;S.medicine=false;
+    addLog('Você se recuperou e voltou à rotina.','good');
+  }
+  bodyCheck();
 }
-function work(){
-  if(S.flags.workedToday){alert('Você já cumpriu seu expediente hoje.');return}
-  let h=S.jobLevel>0?Math.min(8,S.time):S.path==='Autônomo / freelancer'?Math.min(6,S.time):S.flags.business?Math.min(8,S.time):0;
-  if(h<1){alert('Você ainda não tem uma atividade profissional que gere renda. Estude, procure uma vaga ou construa um negócio.');return}
-  activity(()=>{
-    let gain=0;
-    if(S.jobLevel>0)gain=Math.max(0,Math.round(dailyIncome()*(h/8)));
-    else if(S.path==='Autônomo / freelancer')gain=Math.round((55+S.knowledge*2+S.career*2)*(h/6));
-    else if(S.flags.business)gain=Math.round((45*S.flags.businessLevel+S.career)*(h/8));
-    if(S.energy<30){gain=Math.round(gain*.7);S.stress+=5}
-    S.cash+=gain; S.career+=1; S.experience+=2; S.flags.workedToday=true;
-    addLog(`Você trabalhou por ${h} horas e recebeu ${money(gain)}.`,'good')
-  },h,20)
+function activity(fn,h){if(S.time<h||S.gameOver)return;S.time-=h;fn();S.actions++;S.experience+=1;S.energy-=Math.max(2,h*2);S.stress+=Math.max(0,h-2);bodyCheck();save();render()}
+function study(){activity(()=>{S.knowledge+=4;S.education+=3;S.happy+=1;if(S.energy<35)S.stress+=4;addLog('Você estudou por 2 horas. Conhecimento +4 e formação +3.')} ,2)}
+function work(){let h=S.jobLevel>0?Math.min(8,S.time):S.path==='Autônomo / freelancer'?Math.min(6,S.time):S.flags.business?Math.min(8,S.time):0;if(h<1){alert('Você ainda não tem uma atividade profissional que gere renda. Estude, procure uma vaga ou construa um negócio.');return}activity(()=>{let gain=0;if(S.jobLevel>0)gain=Math.max(0,Math.round(dailyIncome()*(h/8)));else if(S.path==='Autônomo / freelancer')gain=Math.round((55+S.knowledge*2+S.career*2)*(h/6));else if(S.flags.business)gain=Math.round((45*S.flags.businessLevel+S.career)*(h/8));if(S.energy<25){gain=Math.round(gain*.7);S.stress+=4}S.cash+=gain;S.career+=1;S.experience+=2;addLog(`Você trabalhou por ${h} horas e recebeu ${money(gain)}.`,'good')},h)}
+function health(){if(S.flags.healthToday){alert('Você já cuidou da saúde hoje. Agora dê espaço para outra parte da sua vida.');return}S.flags.healthToday=true;activity(()=>{S.health+=5;S.happy+=2;S.stress-=5;addLog('Você cuidou da saúde.')},1)}
+function social(){if(S.flags.socialToday){alert('Você já reservou tempo para sua vida pessoal hoje. Equilíbrio também exige variar suas prioridades.');return}S.flags.socialToday=true;activity(()=>{let c=35;if(S.cash>=c)S.cash-=c;else S.debt+=c;S.happy+=5;S.relationship+=6;S.stress-=7;addLog('Você reservou tempo para sua vida pessoal.')},2)}
+function moneyAction(){activity(()=>{S.cash+=10;S.stress-=2;addLog('Você revisou o orçamento e encontrou R$ 10 em economia.','good')},1)}
+function endDay(){
+ if(S.gameOver)return;
+ if(!S.eventDone){addLog('Você terminou o dia sem resolver o acontecimento principal. A oportunidade passou.','bad');S.stress+=5;S.happy-=5;}
+ // custo básico + pressão financeira real
+ let cost=15+(S.age>=22?10:0);if(S.flags.rent)cost+=30;if(S.flags.business)cost+=8;
+ if(S.cash>=cost)S.cash-=cost;else{S.debt+=cost;addLog(`Você não tinha caixa para o custo diário de ${money(cost)}. A despesa foi para a dívida.`,'bad');S.stress+=5;S.happy-=4;}
+ sleepRecovery();
+ S.day++;S.time=12;S.actions=0;S.eventDone=false;S.event=null;S.flags.healthToday=false;S.flags.socialToday=false;
+ if(S.day>30){S.day=1;S.month++;monthlyClose()}
+ if(S.debt>=100000){S.debt=100000;S.gameOver=true;addLog('GAME OVER: sua dívida atingiu R$ 100.000.','bad')}
+ pickEvent();save();render();window.scrollTo({top:0,behavior:'smooth'})
 }
-function health(){
-  if(S.flags.healthToday){alert('Você já cuidou da saúde hoje.');return}
-  activity(()=>{S.flags.healthToday=true;S.health+=5;S.happy+=4;S.stress-=4;addLog('Você cuidou da saúde.')},1,15)
-}
-function social(){
-  if(S.flags.socialToday){alert('Você já reservou tempo para sua vida pessoal hoje.');return}
-  activity(()=>{let c=35;if(S.cash>=c)S.cash-=c;else S.debt+=c;S.happy+=8;S.relationship+=5;S.stress-=7;S.flags.socialToday=true;addLog('Você reservou tempo para sua vida pessoal.')},2,20)
-}
-function moneyAction(){
-  if(S.flags.moneyToday){alert('Você já revisou o orçamento hoje.');return}
-  activity(()=>{S.flags.moneyToday=true;S.cash+=10;S.stress-=2;addLog('Você revisou o orçamento e encontrou R$ 10 em economia.','good')},1,10)
-}
-function endDay(){if(S.gameOver)return;if(!S.eventDone){addLog('Você terminou o dia sem resolver o acontecimento principal. A oportunidade passou.','bad');S.stress+=4}let cost=15+(S.age>=22?10:0);if(S.flags.rent)cost+=30;if(S.cash>=cost)S.cash-=cost;else{S.debt+=cost;addLog(`Você não tinha caixa para o custo diário de ${money(cost)}. A despesa foi para a dívida.`,'bad')}S.day++;S.time=12;S.actions=0;S.eventDone=false;S.event=null;
-S.flags.studiedToday=false;S.flags.workedToday=false;S.flags.healthToday=false;S.flags.socialToday=false;S.flags.moneyToday=false;
-S.energy=Math.min(100,S.energy+45); S.stress=Math.max(0,S.stress-8);
-if(S.day>30){S.day=1;S.month++;monthlyClose()}if(S.debt>0&&S.debt>=100000)S.gameOver=true;pickEvent();save();render()}
 function monthlyClose(){let interest=Math.round(S.debt*.03);if(interest>0){S.debt+=interest;addLog(`Fechamento do mês: juros de 3% sobre a dívida = ${money(interest)}.`,'bad')}if(S.invest>0){let r=(Math.random()*.06)-.015;let change=Math.round(S.invest*r);S.invest+=change;addLog(`Mercado do mês: ${change>=0?'+':''}${money(change)} nos investimentos.`,change>=0?'good':'bad')}let fixed=S.monthlyFixed||0;if(fixed>0){if(S.cash>=fixed)S.cash-=fixed;else{S.debt+=fixed;addLog(`As despesas fixas do mês somaram ${money(fixed)} e viraram dívida por falta de caixa.`,'bad')}}let bonus=Math.round(monthlyIncome()*.02);if(bonus>0){S.cash+=bonus;addLog(`Bônus de organização financeira: ${money(bonus)}.`,'good')}S.monthIncome=monthlyIncome();if(S.month%12===1){S.age=ageAt();addLog(`Você completou um novo ano de vida. Agora tem ${S.age} anos.`,'good')}if(S.experience>=30&&!S.flags.promoted){S.career+=5;S.flags.promoted=true;addLog('Seu histórico profissional abriu caminho para uma promoção.','good')}}
 function restart(){if(confirm('Recomeçar a vida do zero?')){localStorage.removeItem(KEY);location.reload()}}
-function render(){if(!S.created){setup();return}if(!S.event&&!S.eventDone)pickEvent();let e=S.event;let monthDay=Math.round((S.day/30)*100);let eventClass=e&&e.type==='career'?'event':'event';if(e&&e.id==='debt')eventClass='event danger';if(e&&e.id==='emergency')eventClass='event urgent';let html=`<section class="card"><div class="kicker">ANO ${year()} • MÊS ${((S.month-1)%12)+1}/12 • DIA ${S.day}/30</div><h2 class="title">${days[(S.day-1)%7]} — ${S.age} anos</h2><div class="chips"><span class="chip">💼 ${S.profession}</span><span class="chip">📍 ${S.city} — ${S.state}</span><span class="chip">⏰ ${timeLabel()}</span>${S.debt>0?`<span class="chip">💳 Dívida ${money(S.debt)}</span>`:''}<span class="chip">🎯 ${S.careerStage}</span>${S.jobLevel>0?`<span class="chip">🏢 ${S.jobTitle}</span>`:''}</div><div class="grid"><div class="stat"><small>💰 Caixa</small><b>${money(S.cash)}</b></div><div class="stat"><small>📈 Patrimônio líquido</small><b>${money(net())}</b></div><div class="stat"><small>❤️ Saúde</small><b>${Math.round(S.health)}%</b></div><div class="stat"><small>⚡ Energia</small><b>${Math.round(S.energy)}%</b></div><div class="stat"><small>😊 Felicidade</small><b>${Math.round(S.happy)}%</b></div><div class="stat"><small>🧠 Estresse</small><b>${Math.round(S.stress)}%</b></div><div class="stat"><small>📚 Conhecimento</small><b>${S.knowledge}</b></div><div class="stat"><small>💼 Experiência</small><b>${S.experience}</b></div><div class="stat"><small>💳 Dívida</small><b>${money(S.debt)}</b></div><div class="stat"><small>🏦 Investimentos</small><b>${money(S.invest)}</b></div></div><p class="tiny" style="margin-top:15px">Tempo disponível hoje: <b>${S.time} horas</b> • Renda mensal estimada: <b>${money(monthlyIncome())}</b> • Formação: <b>${S.education}</b></p><div class="progress"><i style="width:${monthDay}%"></i></div><p class="tiny">⚡ <b>${S.energy<15?'Você está exausto. Dormir será a melhor decisão.':S.energy<35?'Sua energia está baixa. Escolha suas próximas horas com cuidado.':'Você ainda tem energia para decidir o rumo do dia.'}</b></p><p class="tiny">Progresso do mês: ${monthDay}%</p></section>`;
+function lifeMood(){
+  if(S.sick) return 'Seu corpo está pedindo pausa';
+  if(S.stress>=80) return 'Pressão no limite';
+  if(S.debt>=5000) return 'A dívida está pesando';
+  if(S.cash<100) return 'Pouco dinheiro disponível';
+  if(S.relationship<35) return 'Vida pessoal esquecida';
+  if(S.happy<35) return 'Dias emocionalmente difíceis';
+  if(S.happy>85 && S.stress<30 && S.debt===0) return 'Momento muito positivo';
+  if(S.stress>55) return 'Rotina pesada';
+  return 'Equilíbrio em construção';
+}
+function render(){if(!S.created){setup();return}if(!S.event&&!S.eventDone)pickEvent();let e=S.event;let monthDay=Math.round((S.day/30)*100);let eventClass=e&&e.type==='career'?'event':'event';if(e&&e.id==='debt')eventClass='event danger';if(e&&e.id==='emergency')eventClass='event urgent';let html=`<section class="card"><div class="kicker">ANO ${year()} • MÊS ${((S.month-1)%12)+1}/12 • DIA ${S.day}/30</div><h2 class="title">${days[(S.day-1)%7]} — ${S.age} anos</h2><div class="chips"><span class="chip">💼 ${S.profession}</span><span class="chip">📍 ${S.city} — ${S.state}</span><span class="chip">⏰ ${timeLabel()}</span>${S.debt>0?`<span class="chip">💳 Dívida ${money(S.debt)}</span>`:''}${S.sick?`<span class="chip">🤒 DOENTE</span>`:''}<span class="chip">🎯 ${S.careerStage}</span>${S.jobLevel>0?`<span class="chip">🏢 ${S.jobTitle}</span>`:''}</div><div class="grid"><div class="stat"><small>💰 Caixa</small><b>${money(S.cash)}</b></div><div class="stat"><small>📈 Patrimônio líquido</small><b>${money(net())}</b></div><div class="stat"><small>❤️ Saúde</small><b>${Math.round(S.health)}%</b></div><div class="stat"><small>⚡ Energia</small><b>${Math.round(S.energy)}%</b></div><div class="stat"><small>😊 Felicidade</small><b>${Math.round(S.happy)}%</b></div><div class="stat"><small>🧠 Estresse</small><b>${Math.round(S.stress)}%</b></div><div class="stat"><small>📚 Conhecimento</small><b>${S.knowledge}</b></div><div class="stat"><small>💼 Experiência</small><b>${S.experience}</b></div><div class="stat"><small>💳 Dívida</small><b>${money(S.debt)}</b></div><div class="stat"><small>🏦 Investimentos</small><b>${money(S.invest)}</b></div></div><p class="tiny" style="margin-top:15px">Clima da vida: <b>${lifeMood()}</b> • Tempo disponível hoje: <b>${S.time} horas</b> • Renda mensal estimada: <b>${money(monthlyIncome())}</b> • Formação: <b>${S.education}</b></p><div class="progress"><i style="width:${monthDay}%"></i></div><p class="tiny">Progresso do mês: ${monthDay}%</p></section>`;
 if(e){html+=`<section class="card ${eventClass}"><div class="kicker">⚡ ACONTECEU AGORA</div><h2 class="title">${e.title}</h2><p class="sub">${typeof e.text==='function'?e.text():e.text}</p>${e.choices.map((c,i)=>{let ss=typeof c.s==='function'?c.s():c.s;return `<button class="choice ${i===0?'heroChoice':''}" onclick="choose(${i})" ${S.eventDone?'disabled':''}><strong>${c.t}</strong><span class="tiny">${ss}</span></button>`}).join('')}${S.eventDone?`<div class="result"><b>Decisão registrada.</b><br>${e.result||''}<br><span class="tiny">A consequência fica na sua história.</span></div>`:''}</section>`}
-html+=`<section class="card"><div class="kicker">AGENDA DE HOJE</div><h2 class="title">${S.time>0?'Você decide como viver o seu dia':'Seu tempo acabou'}</h2><div class="action"><h3>🎓 Estudar</h3><p>2 horas • conhecimento +4 • formação +3 • abre caminhos futuros.</p><button onclick="study()" ${S.time<2?'disabled':''}>ESTUDAR AGORA</button></div><div class="action"><h3>💼 Trabalhar</h3><p>${S.jobLevel>0?'Até 8 horas':'Conforme sua atividade'} • gera renda somente quando você tem trabalho, clientes ou negócio.</p><button onclick="work()" ${S.time<1?'disabled':''}>IR TRABALHAR</button></div><div class="action"><h3>🏃 Cuidar da saúde</h3><p>1 hora • saúde +5 • felicidade +4.</p><button onclick="health()" ${S.time<1?'disabled':''}>CUIDAR DA SAÚDE</button></div><div class="action"><h3>❤️ Vida pessoal</h3><p>2 horas • custa pouco • fortalece relações.</p><button onclick="social()" ${S.time<2?'disabled':''}>VIVER UM POUCO</button></div><div class="action"><h3>💰 Organizar dinheiro</h3><p>1 hora • orçamento • pequena economia.</p><button onclick="moneyAction()" ${S.time<1?'disabled':''}>ORGANIZAR</button></div><button class="secondary" onclick="endDay()">🌙 ENCERRAR O DIA E DORMIR</button></section>`;
+html+=`<section class="card"><div class="kicker">AGENDA DE HOJE</div><h2 class="title">${S.time>0?'Você decide como gastar seu tempo':'Seu tempo acabou'}</h2><div class="action"><h3>🎓 Estudar</h3><p>2 horas • conhecimento +4 • formação +3 • abre caminhos futuros.</p><button onclick="study()" ${S.time<2?'disabled':''}>ESTUDAR AGORA</button></div><div class="action"><h3>💼 Trabalhar</h3><p>${S.jobLevel>0?'Até 8 horas':'Conforme sua atividade'} • gera renda somente quando você tem trabalho, clientes ou negócio.</p><button onclick="work()" ${S.time<1?'disabled':''}>IR TRABALHAR</button></div><div class="action"><h3>🏃 Cuidar da saúde</h3><p>1 hora • saúde +5 • felicidade +4.</p><button onclick="health()" ${S.time<1?'disabled':''}>CUIDAR DA SAÚDE</button></div><div class="action"><h3>❤️ Vida pessoal</h3><p>2 horas • custa pouco • fortalece relações.</p><button onclick="social()" ${S.time<2?'disabled':''}>VIVER UM POUCO</button></div><div class="action"><h3>💰 Organizar dinheiro</h3><p>1 hora • orçamento • pequena economia.</p><button onclick="moneyAction()" ${S.time<1?'disabled':''}>ORGANIZAR</button></div><button class="secondary" onclick="endDay()">🌙 ENCERRAR O DIA E DORMIR</button></section>`;
 html+=`<section class="card"><div class="kicker">HISTÓRIA DA SUA VIDA</div>${S.logs.length?S.logs.map(x=>`<div class="log ${x.cls||''}">• Mês ${x.m} / Dia ${x.d} — ${x.t}</div>`).join(''):'<p class="sub">Sua história começa agora.</p>'}</section>`;
-if(S.gameOver)html+=`<section class="card gameover"><div class="kicker">FIM DA LINHA</div><h2 class="title">GAME OVER</h2><p class="sub">Sua dívida atingiu R$ 100.000. Você não perdeu por um clique aleatório: suas decisões financeiras acumularam consequências. Recomece e tente outra estratégia.</p><button class="danger" onclick="restart()">RECOMEÇAR DO ZERO</button></section>`;else html+=`<section class="card"><button class="danger" onclick="restart()">RECOMEÇAR DO ZERO</button></section>`;html+=`<div class="footer">DO ZERO AO TOPO — ALPHA 1.4</div>`;document.getElementById('app').innerHTML=html}
+if(S.gameOver)html+=`<section class="card gameover"><div class="kicker">FIM DA LINHA</div><h2 class="title">GAME OVER</h2><p class="sub">Sua dívida atingiu R$ 100.000. Você não perdeu por um clique aleatório: suas decisões financeiras acumularam consequências. Recomece e tente outra estratégia.</p><button class="danger" onclick="restart()">RECOMEÇAR DO ZERO</button></section>`;else html+=`<section class="card"><button class="danger" onclick="restart()">RECOMEÇAR DO ZERO</button></section>`;html+=`<div class="footer">DO ZERO AO TOPO — ALPHA 1.5</div>`;document.getElementById('app').innerHTML=html}
 load();render();
 </script></body></html>
